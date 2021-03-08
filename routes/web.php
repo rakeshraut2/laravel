@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -13,6 +14,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/rakesh', function () {
     return view('welcome');
 });
+
+Route::get('/hello', function (){
+ return view('firstpage');
+});
+
+// Route::get('/second', function (){
+//  return view('secondpage');
+// });
+
+// Route::get('hello', function () {
+//     return view('firstpage');
+// });
+Route::get('/second','App\Http\Controllers\myController@index');
+
+
+//to show addproduct form
+Route::get('/addproduct','App\Http\Controllers\myController@showproductform');
+
+// // to insert a array_product
+Route::post('/storeproduct','App\Http\Controllers\myController@store')->name('storeproduct');
