@@ -37,3 +37,6 @@ Route::get('/addproduct','App\Http\Controllers\myController@showproductform');
 
 // // to insert a array_product
 Route::post('/storeproduct','App\Http\Controllers\myController@store')->name('storeproduct');
+
+// to show data
+Route::get('/showproduct','App\Http\Controllers\myController@show')->name('showproduct');
