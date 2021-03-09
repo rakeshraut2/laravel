@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\product;
 
 class myController extends Controller
 {
@@ -45,12 +46,12 @@ class myController extends Controller
         getClientOriginalName();
         $file->move('uploads/products/',$image);
     }
-    product::create([
-      'product_name'=>$request->get('pname'),
-      'product_price'=>$request->get('price'),
-      'product_quantity'=>$request->get('quantity'),
-      'product_description'=>$request->get('description'),
-      'product_image'=>$image
+    Product::create([
+      'Product_name'=>$request->get('pname'),
+      'Product_price'=>$request->get('price'),
+      'Product_Quantity'=>$request->get('quantity'),
+      'Product_description'=>$request->get('description'),
+      'Product_image'=>$image
      ]);
     $request->session()->Flash('msg','Product has been added successfully');
     return redirect()->back();
