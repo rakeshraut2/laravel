@@ -58,9 +58,10 @@ image ko file read garna ko lagi -->
 <!-- action = to insert data -->
 <!-- php ma gareko kaam  lai database ra laravel ma pathaune
 -git space add space . enter
--git space commit space -m "fifth commit"
+-git space commit space -m 'fifth commit'
 -git push space -u origin master -->
-laravel ko seerve on garna ko lagi 
+<!-- laravel ko serve on garna ko lagi 
 php artisan serve
 port no.8000
-open garna ko lagi localhost:8000
+open garna ko lagi localhost:8000 -->
+<!-- array= eutau variable ma multiple value pathaune ho -->

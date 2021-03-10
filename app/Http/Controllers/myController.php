@@ -68,6 +68,11 @@ class myController extends Controller
         $showdata=Product::orderby('id','desc')->get();
         return view('showproduct',['showdata'=>$showdata]);
     }
+    public function homepage()
+    {
+        $show=Product::orderby('id','desc')->get();
+        return view('homepage',['show'=>$show]);
+    }
 
     /**
      * Show the form for editing the specified resource.

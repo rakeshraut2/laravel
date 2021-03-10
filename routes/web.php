@@ -40,3 +40,6 @@ Route::post('/storeproduct','App\Http\Controllers\myController@store')->name('st
 
 // to show data
 Route::get('/showproduct','App\Http\Controllers\myController@show')->name('showproduct');
+
+// to show data in homepage
+Route::get('/homepage','App\Http\Controllers\myController@homepage')->name('homepage');
