@@ -9,6 +9,10 @@
 <body>
 	<div class="container">
 		<h1 class="text-info">show product</h1>
+    @if(Session::has('msg'))
+    <div class="alert alert-success">{{Session::get('msg')}}
+    </div>
+    @endif
 	<table class="table">
   <thead>
     <tr>
@@ -28,8 +32,8 @@
         <td>{{$s->Product_Quantity}}</td>
         <td>{{$s->Product_description}}</td>
         <td><img src="{{asset('uploads/products')}}/{{$s->Product_image}}" width="150"></td>
-        <td><a href=""><button class="btn btn-primary"><i class="bi bi-pencil-square text-white"></i></button></a>
-        <a href="" onclick="return confirm('are you sure?')"><button class="btn btn-danger"><i class="bi bi-trash-fill text-white"></i></button></a>
+        <td><a href="{{route('editproduct',$s->id)}}"><button class="btn btn-primary"><i class="bi bi-pencil-square text-white"></i></button></a>
+        <a href="{{route('delete',$s->id)}}" onclick="return confirm('are you sure?')"><button class="btn btn-danger"><i class="bi bi-trash-fill text-white"></i></button></a>
         </td>
     </tr>
     @endforeach
