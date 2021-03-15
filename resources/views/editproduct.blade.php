@@ -13,7 +13,7 @@
 			{{Session::get('msg')}}
 		</div>
 		@endif
-		<form method="post" enctype="multipart/form-data" action="">@csrf
+		<form method="post" enctype="multipart/form-data" action="{{route('updateproduct',$product->id)}}">@csrf
 			<div class="col-md-6">
 				<label for="product name">Product name</label><br>
 				<input type="text" class="form control" name="pname" placeholder="enter productname" id="inputProductName" value="{{$product->Product_name}}">

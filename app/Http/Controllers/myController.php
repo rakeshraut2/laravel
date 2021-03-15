@@ -95,8 +95,27 @@ class myController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $product=Product::find($id);
+       if($request->hasFile('image')){
+        $file=$request->file('image');
+        $image=mt_rand(10001,9999999).'_'.$file->
+        getClientOriginalName();
+        $file->move('uploads/products/',$image);
+    
+    if($product->Product_image){
+          unlink('uploads/products/'.$product->Product_image);
     }
+     $product->Product_image=$image;
+    }
+    $product->update([
+      'Product_name'=>$request->get('pname'),
+      'Product_price'=>$request->get('price'),
+      'Product_Quantity'=>$request->get('quantity'),
+      'Product_description'=>$request->get('description'),
+    ]);
+    $request->session()->Flash('msg','Product has been updated successfully');
+    return redirect()->back();
+  }
 
     /**
      * Remove the specified resource from storage.
@@ -113,6 +132,6 @@ class myController extends Controller
     }
     $product->delete();
     $request->session()->flash('msg','Product has been delete successfully');
-    return redirect()->back();
+    return redirect()->route('showproduct');
         }
 }
